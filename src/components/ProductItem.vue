@@ -20,9 +20,8 @@
           <input
             class="colors__radio sr-only"
             type="radio"
-            name="color-1"
             value="#73B6EA"
-            checked=""
+            v-model="color"
           >
           <span class="colors__value" style="background-color: #73B6EA;">
                   </span>
@@ -30,14 +29,14 @@
       </li>
       <li class="colors__item">
         <label class="colors__label">
-          <input class="colors__radio sr-only" type="radio" name="color-1" value="#8BE000">
+          <input class="colors__radio sr-only" type="radio" value="#8BE000" v-model="color">
           <span class="colors__value" style="background-color: #8BE000;">
                   </span>
         </label>
       </li>
       <li class="colors__item">
         <label class="colors__label">
-          <input class="colors__radio sr-only" type="radio" name="color-1" value="#222">
+          <input class="colors__radio sr-only" type="radio" value="#222" v-model="color">
           <span class="colors__value" style="background-color: #222;">
                   </span>
         </label>
@@ -48,6 +47,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      color: '#73B6EA',
+    };
+  },
   props: ['product'],
 };
 </script>
