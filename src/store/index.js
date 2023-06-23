@@ -24,6 +24,18 @@ export default new Vuex.Store({
         });
       }
     },
+    updateCartProductAmount(state, { productId, amount }) {
+      // eslint-disable-next-line no-shadow
+      const item = state.cartProducts.find((item) => item.productId === productId);
+
+      if (item) {
+        item.amount = amount;
+      }
+    },
+    deleteCartProduct(state, productId) {
+      // eslint-disable-next-line no-shadow
+      state.cartProducts = state.cartProducts.filter((item) => item.productId !== productId);
+    },
   },
   /* eslint-disable max-len */
 
