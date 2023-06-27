@@ -47,11 +47,14 @@
   </main>
 </template>
 <script>
+import numberFormat from '@/helpers/numberFormat';
 import { mapGetters } from 'vuex';
 import CarItem from '@/components/CarItem.vue';
 
 export default {
   components: { CarItem },
+  filters: { numberFormat },
+
   computed: {
     ...mapGetters({ products: 'cartDetailProducts', totalPrice: 'cartTotalPrice' }),
   },
