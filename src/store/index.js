@@ -14,6 +14,10 @@ export default new Vuex.Store({
     cartProductsData: [],
   },
   mutations: {
+    resetCart(state) {
+      state.cartProducts = [];
+      state.cartProductsData = [];
+    },
     updateCartProductAmount(state, { productId, amount }) {
       // eslint-disable-next-line no-shadow
       const item = state.cartProducts.find((item) => item.productId === productId);
